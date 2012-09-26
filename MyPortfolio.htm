@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Dwayne Tucker</title>
+
+        <!--Main Style sheets-->
+        <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+
+        <!--for all custom ui componets, check for their dependencies-->
+
+        <!--jquery custom theme style -->
+        <link rel="stylesheet" type="text/css" href="js/themes/custom-theme/jquery-ui-1.8.23.custom.css" media="screen" />
+
+        <!--plugin styles-->
+        <link rel="stylesheet" href="agile_carousel.css" type='text/css'>
+
+        <!--jquery main-->
+        <script src="js/jquery-1.8.0.js"></script>
+
+        <!-- jquery cores ui and effects-->
+        <script src="js/ui/jquery.effects.core.js"></script>
+        <script src="js/ui/jquery.ui.core.js"></script>
+
+        <!--jquery effects-->
+        <script src="js/ui/jquery.effects.explode.js"></script>
+
+        <!--jquery dailog-->
+        <script src="js/ui/jquery.ui.widget.js"></script>
+        <script src="js/ui/jquery.ui.position.js"></script>
+        <script src="js/ui/jquery.ui.dialog.js"></script>
+        <script src="js/ui/jquery.effects.fade.js"></script>
+
+        <!--jquery plugins-->
+        
+        
+        
+</head>
+<body>
+        <div id="container">
+
+<!--header start--><div id="header">
+                        <ul id="topNav">
+                            <li><a href="#"><span>Admin</span></a></li>
+                            <li><a href="#"><span>RSS</span></a></li>
+                            <li><a href="#"><span>Facebook</span></a></li>
+                            <li><a href="#"><span>Follow Me</span></a></li>
+                        </ul>
+                        <div id="grayBanner">&nbsp;</div>
+<!--header end--> </div>
+
+
+<!--main start--><div id="main">
+    <!--col1 start--><div class="col1">
+                            <h1 id="name">Dwayne Tucker</h1>
+                            <div id="searchBox">
+                                <!--<input type="text" /><a id="searchBtn" href="#">Search ></a>-->
+                            </div>
+                            <ul id="navigation">
+                                <li>
+                                    <a href="#"><span>Web</span></a>
+                                    <span class="slash">/</span>
+                                </li>
+                                <li>
+                                    <a href="#"><span>Mobile apps</span></a>
+                                    <span class="slash">/</span>
+                                </li>
+                                <li>
+                                    <a href="#"><span>Projects</span></a>
+                                    <span class="slash">/</span>
+                                </li>
+                                <li>
+                                    <a href="#"><span>About Me</span></a>
+                                </li>
+                            </ul>
+      <!--col1 end--></div>
+      <!--col2 start--><div class="col2">
+
+                                <div class="demos" id="demos">
+                                    <div class="boxee">
+                                        <a href="#">
+                                            <img src="/img/projects/roundabout/demos/standard.png" alt="Standard" />
+                                            <span>Standard Roundabout</span>
+                                        </a>
+                                    </div>
+                                    <div class="boxee">
+                                        <a href="#">
+                                            <img src="/img/projects/roundabout/demos/standard.png" alt="Standard" />
+                                            <span>Standard Roundabout</span>
+                                        </a>
+                                    </div>
+                                    <div class="boxee">
+                                        <a href="#">
+                                            <img src="/img/projects/roundabout/demos/standard.png" alt="Standard" />
+                                            <span>Standard Roundabout</span>
+                                        </a>
+                                    </div>
+                                    <div class="boxee">
+                                        <a href="#">
+                                            <img src="/img/projects/roundabout/demos/standard.png" alt="Standard" />
+                                            <span>Standard Roundabout</span>
+                                        </a>
+
+                                    </div>	
+                                </div>
+       <!--col2 end--></div>
+
+<!--main end--></div>
+
+
+
+<!--foot Start--><div id="footer">
+                        <a href="#" id="credits">Dwayne Tucker</a>
+                        <div class="section">
+                                   <!--social network plugins-->
+                            <div class="addthis_toolbox addthis_default_style">
+                                <a href="#">fb</a>
+                                <a href='#'>tweet</a>
+                                <a href='#'>google</a>
+                                <a href='#'>del</a>
+                                <a href='#'>at</a>
+                            </div>
+                            
+                        </div>
+                        <div id="back-footer"></div>
+<!--foot end--></div>
+
+                <div id="dialog-modal" title="Basic modal dialog">
+                    <p>Adding the modal overlay screen makes the dialog look more prominent because it dims out the page content.</p>
+                </div>
+
+<!--end of container--></div>
+    </body>
+</html>
+<script>
+	
+    $(document).ready(function() {
+        
+        //onlice dialog blue modal for demos
+        $(".boxee").click(function(index) {	
+            //$(this).hide('explode', {}, 600);
+            $("#dialog-modal").dialog({
+                dialogClass: 'dialogWithDropShadow',
+                height: 140,
+                modal: true,
+                show: {
+                    effect: 'fade',
+                    duration: 700
+                },
+                hide: {
+                    effect: 'fade',
+                    duration: 400
+                },
+                open: function(event, ui){
+                    $('body').css('overflow','hidden');
+                    $('.ui-widget-overlay').css('width','100%'); 
+                    $('.ui-widget-overlay').hide().fadeTo(700, 0.5);  
+                },
+                beforeClose: function(event, ui){
+                    $('body').css('overflow','auto');
+                }
+            });
+        });
+
+        //col1 float in Name and lower nav /
+        $('.col1').css({
+            'position': 'relative',
+            'top': '-600px'
+        }).animate({
+            'top': '0px'
+        }, 1000, 'easeOutBack');
+		
+		
+			
+    });
+  
+</script>

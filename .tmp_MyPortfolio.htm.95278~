@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Dwayne Tucker</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	
+	<!--Style sheets-->
+	<link rel="stylesheet" type="text/css" href="reset.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+	<link rel="stylesheet" href="orbit.css">
+	
+	<!--jquery main, easing-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" ></script>
+	<script src="easing.js" ></script>
+	
+	<!--jquery plugins-->
+	<script src="agile_carousel.js" ></script>
+	<script>
+
+    // Code used for "Flavor 2" example (above)
+    
+    $.getJSON("agile_carousel/agile_carousel_data.php", function(data) {
+        $(document).ready(function(){
+            $("#flavor_2").agile_carousel({
+                
+                // required settings
+                
+                carousel_data: data,
+                carousel_outer_height: 330,
+                carousel_height: 230,
+                slide_height: 230,
+                carousel_outer_width: 480,
+                slide_width: 480,
+                                                
+                // end required settings
+                                                
+                transition_type: "fade",
+                transition_time: 600,
+                timer: 3000,
+                continuous_scrolling: true,
+                control_set_1: "numbered_buttons,previous_button,
+                ... (continues on same line)... pause_button,next_button",
+                control_set_2: "content_buttons",
+                change_on_hover: "content_buttons"
+            });
+        });
+    });
+ </script>
+	
+	
+	
+	
+<script>
+	
+	$(document).ready(function() {
+	
+        $('.col1').css({
+            'position': 'relative',
+            'top': '-600px'
+        }).animate({
+            'top': '0px'
+        }, 1000, 'easeOutBack');		
+  });
+  
+</script>
+
+<style>
+body {
+	background: url(slider-background.jpg) repeat-x;
+	background-position:center;
+	position: absolute;
+	z-index:-1;
+	min-height:800px;
+
+}
+		
+/*-- hide the captions --*/
+#basic_slideshow .caption {
+display: none;
+}
+.slideshow {
+float: left;
+-moz-box-shadow: 3px 3px 3px #dddcdc;
+-webkit-box-shadow: 3px 3px 3px #dddcdc;
+box-shadow: 3px 3px 3px #dddcdc;
+}
+</style>
+</head>
+<body>
+<div id="container">
+	
+<!--header start-->		<div id="header">
+							<ul id="topNav">
+								<li><a href="#"><span>Admin</span></a></li>
+								<li><a href="#"><span>RSS</span></a></li>
+								<li><a href="#"><span>Facebook</span></a></li>
+								<li><a href="#"><span>Follow Me</span></a></li>
+							</ul>
+							<div id="grayBanner">&nbsp;</div>
+<!--header end-->		</div>
+
+
+<!--main start-->		<div id="main">
+	<!--col1 start-->		<div class="col1">
+								<h1 id="name">Dwayne Tucker</h1>
+									<div id="searchBox">
+										<!--<input type="text" /><a id="searchBtn" href="#">Search ></a>-->
+									</div>
+									<ul id="navigation">
+										<li>
+											<a href="#"><span>Web</span></a>
+											<span class="slash">/</span>
+										</li>
+										<li>
+											<a href="#"><span>Mobile apps</span></a>
+											<span class="slash">/</span>
+										</li>
+										<li>
+											<a href="#"><span>Projects</span></a>
+											<span class="slash">/</span>
+										</li>
+										<li>
+											<a href="#"><span>About Me</span></a>
+										</li>
+									</ul>
+	<!--col1 end-->			</div>
+	<!--col2 start-->		<div class="col2">
+		
+								<div class="slideshow_wrapper">
+									<div class="slideshow" id="basic_slideshow">dfgdfg</div>
+									
+								</div>
+								
+							</div>
+		
+<!--main end-->			</div>
+
+
+<!--foot Start-->		<div id="footer">
+							<a href="#" id="credits">Dwayne Tucker</a>
+								<div class="section">
+							
+									<!-- AddThis Button BEGIN -->
+									<div class="addthis_toolbox addthis_default_style">
+										<a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:href="#">fb</a>
+										<a class="addthis_button_tweet" tw:url="" tw:via="">tweet</a>
+										<a class="addthis_button_google_plusone" g:plusone:size="medium">google</a>
+										<a class="addthis_button_delicious" >del</a>
+										<a class="addthis_counter addthis_pill_style">at</a>
+									</div>
+									<!-- AddThis Button END -->
+									
+								</div>
+							<div id="back-footer"></div>
+<!--foot end-->			</div>
+	
+	
+	
+</div><!--end of container-->
+</body>
+</html>
+

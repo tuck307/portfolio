@@ -1,0 +1,318 @@
+/*colors:
+ * cool gray:#ACACAC
+ * */
+html,
+body {
+    height:100%;	
+    width:100%;
+    min-width:100%;
+    background:#fff;
+    min-width:768px;			
+    font-weight:100;
+    font-size:15px;
+    font-family:serif;
+    background: url(../images/slider-background.jpg) repeat-x;
+    background-position: 0% 240px;
+    z-index:-1;
+    min-height:800px;
+}
+
+a {
+    color:#369;
+}
+
+
+p {
+    margin:.4em 0 .8em 0;
+}
+
+/*page wrapper container*/
+#container {
+    min-height:100%;
+    position:relative;
+    min-width:100%;
+}
+
+#header {
+    clear:both;
+    float:left;
+    width:100%;
+}
+
+#header div#grayBanner{
+    padding:.4em 15px 0 15px;
+    background:#D9D9D9;
+    /*background:#ACACAC;*/
+    clear:both;
+    box-shadow: 0px 1px 2px -1px rgba(0,0, 0,.8);
+    -moz-box-shadow: 0px 1px 2px -1px rgba(0,0, 0,.8);
+    -webkit-box-shadow: 0px 1px 2px -1px rgba(0,0, 0,.8);
+}
+
+#header ul#topNav {
+    text-align:right;
+    width:100%;
+    max-width:1020px;
+    list-style:none;
+    margin:10px auto 0 auto;
+    overflow:auto;
+}
+
+#header ul#topNav li {
+    display:inline;
+    list-style:none;
+}
+
+#header ul#topNav li a {
+    display:block;
+    float:right;
+    margin:0 0 0 10px;
+    padding:3px 10px;
+    text-align:center;
+    color:#000;
+    text-decoration:none;
+    position:relative;
+    line-height:1.3em;
+}
+
+#header ul#topNav li a:hover {
+    background-color: #006699;
+    color:#fff;
+}
+
+#header ul#topNav li a.active,
+#header ul#topNav li a.active:hover {
+    color:#fff;
+    background:#000;
+}
+
+#header ul#topNav li a span {
+    display:block;
+}
+
+/* column container */
+#main {
+    position:relative;	/* This fixes the IE7 overflow hidden bug */
+    clear:both;
+    overflow:hidden;		/* This chops off any overhanging divs */
+    padding-bottom:60px;   /* Height of the footer */
+    max-width:1015px;
+    margin:auto;
+    padding-left:5px;
+}
+
+.col1{
+    position:relative;
+    padding:2px;
+    overflow:hidden;
+}
+
+/* Footer styles 
+#footer {
+        width:100%;
+        position:absolute;
+        bottom:0;
+        width:100%;
+        height:40px;   
+        background-color: #006699;
+        
+}*/
+
+/* =Footer
+-------------------------------------------------------------- */
+#footer { 
+    position:fixed; 
+    bottom:0; 
+    left:0; 
+    width:100%;
+    height:50px; 
+    z-index:200; 
+}
+#credits { 
+    float:left; 
+    margin:2px 0 0 5px; 
+    text-indent:-9999em; 
+    overflow:hidden;
+    background:url('../images/logo-thiago.png') no-repeat left top;  
+    width:42px; 
+    height:42px;
+    position:relative; 
+    z-index:10; 
+}
+#footer .section { 
+    float:right; 
+    margin:15px 15px 0 0; 
+    position:relative; 
+    z-index:10;
+    padding:3px;  
+}
+#back-footer { 
+    position:absolute; 
+    z-index:9; 
+    background:#fff repeat left top;
+    opacity:0.85; 
+    filter: alpha(opacity = 85);
+    width:100%; 
+    height:50px; 
+}
+
+/* =Main Navigation Col1
+-------------------------------------------------------------- */
+
+h1#name{
+    font-size:38px;
+    margin-top:10px;
+    float:left;
+}
+
+#main ul#navigation{
+    padding-top:7px;
+    clear:both;
+    color:#006699;
+}
+
+#main ul#navigation li{
+    display:inline;
+    list-style:none;
+    margin:10px 10px 10px 0px;
+    font-variant:small-caps;
+}
+
+#main ul#navigation li a{
+    text-decoration:none;
+}
+
+#main ul#navigation li a:hover {
+    color:#931931;
+    text-decoration:underline;
+}
+
+#main ul#navigation li span.slash{
+    margin-left:10px;
+    font-size:20px; 
+    position:relative;
+    top:3px;
+}
+
+#main #searchBox{
+    float:right;
+    position:relative; 
+    top:10px;
+}
+
+#main #searchBox input[type=text]{
+    padding:4px;
+    margin:0;
+    position:relative;
+    top:3px;
+    float:left;
+}
+
+#main #searchBox #searchBtn{
+
+    background-color:#4E4E4E;
+    padding:5px 5px 6px 5px;
+    font-size:18px;
+    text-decoration:none;
+    margin:2px;
+    color:#D9D9D9;
+    display:inline-block;
+    font-weight:100px;
+
+}
+
+/*demos grey blue box col2*****************************************/
+.demos {
+    margin-top:30px;
+    overflow:auto;
+    width:99%;
+}
+
+.demos ul {
+    list-style: none;
+    padding: 0;
+}
+.boxee:hover{
+    box-shadow:0px 0px 8px rgba(255, 255, 255, 0.6);
+}
+
+.boxee{
+    width: 30%;
+    height:175px;
+    background-color: #006699;
+    margin-right: 5px;
+    margin-left:5px;
+    margin-top:5px;
+    float: left;
+    margin-bottom: 2em;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.7);
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    border:4px outset #006699;
+    border-radius:2px;
+}
+.demos li {
+    width: 300px;
+    height:160px;
+    background-color:black;
+    margin-right: 25px;
+    float: left;
+    margin-bottom: 2em;
+    position: relative;
+    z-index: 2;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    display:block;
+}
+.demos li:nth-child(3n) {
+    margin-right: 0;
+}
+.demos a {
+    display: block;
+    background-color: #e8e8e8;
+    height: 160px;
+    position: relative;
+    font-size: 0.9em;
+    font-style: italic;
+    line-height: 1.2;
+    text-align: center;
+    padding: 8px 12px;
+    z-index: 2;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    border-radius:0px;
+}
+.demos a img {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    opacity: 0.6;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.demos a:hover {
+    background-color: #f3f3f3;
+}
+
+.demos a:hover img {
+    opacity: 1;
+}
+/*---------dailog modal*/
+#dialog-modal{
+    display:none;
+}
