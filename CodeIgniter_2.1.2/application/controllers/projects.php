@@ -1,9 +1,9 @@
 <?php
 
-class Web extends CI_Controller{
+class Projects extends CI_Controller{
     
     
-    function Web(){
+    function Projects(){
      parent::__construct();
      $this->load->helper('url');
      $this->load->helper('form');
@@ -16,7 +16,7 @@ class Web extends CI_Controller{
         $data['myBread'] = set_breadcrumb();
         
         $this->load->view('templates/header.php', $data);
-        $this->load->view('pages/web_view');
+        $this->load->view('pages/projects_view');
         $this->load->view('templates/footer.php');
     }
 }

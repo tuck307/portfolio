@@ -45,8 +45,8 @@ if (typeof jQuery == 'undefined') {
                         <ul id="topNav">
                             <li><a href="#"><span>Admin</span></a></li>
                             <li><a href="#"><span>Blog</span></a></li>
-                            <li><a href="#"><span>Contact Me</span></a></li>
-                            <li><?=anchor('main/aboutMe','<span>About Me</span>');?></li>
+                            <li><a href="#"><span>Contact</span></a></li>
+                            <li><?=anchor('main/aboutMe','<span>About</span>');?></li>
                             <li><?=anchor('main/Resume','<span>Resume</span>');?></li>
                         </ul>
                         <div id="grayBanner">&nbsp;</div>
@@ -55,18 +55,22 @@ if (typeof jQuery == 'undefined') {
 
 <!--main start--><div id="main">
     <!--col1 start--><div class="col1">
-                             <?=anchor('main','<h1 id="name" style="color:black;">Dwayne Tucker</h1>');?>
-                            <div id="searchBox">
-                                <!--<input type="text" /><a id="searchBtn" href="#">Search ></a>-->
-                            </div>
-                            <ul id="navigation">
+                             <?=anchor('','<h1 id="name" style="color:black;">Dwayne Tucker</h1>');?>
+                             <?=$myBread?>
+<!--                            <ul id="navigation">
                                 <li>
-                                    <?=anchor('main','<span>HOME</span>');?>                          
+                                    <?=anchor('/','<span>HOME</span>');?>                          
                                     <span class="slash">/</span>
                                 </li>
                                 <li>
-
+                                    <?=anchor('/web','WEB');?>                          
+                                    <span class="slash">/</span>
                                 </li>
                               
-                            </ul>
+                            </ul>-->
+        
       <!--col1 end--></div>
+    
+    
+    
+ 

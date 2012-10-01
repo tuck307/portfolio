@@ -1,29 +1,38 @@
-        <div id="ps_slider" class="ps_slider" style="float:left;">
+<script>
+    $(document).ready(function() {
+         //col1 float in Name and lower nav /
+         $('.col1').css('top','-600px');
+        $('.col1').animate({
+            'top': '0px'
+        }, 1000, 'easeOutBack');
+    });
+</script>
+<!--col2 start--><div class="col2">
 
-			<div id="ps_albums">
-                             <?=anchor('main/mobile','   
-				<div class="ps_album" >
+			<div id="albums">
+                             <?=anchor('mobile','   
+			     <div class="album" >
                                     
-                                         <img  src="../images/standard2.png" />
-					<div class="ps_desc blue">
+                                         <img  src="images/standard2.png" />
+					<div class="album_desc blue">
 						<h2>Mobile Apps</h2>
 						<span>Here are some of my mobile projects coded in Sencha touch for hybrid, objective-c for iphone and java for android</span>
 					</div>
 				</div>
                              ');?> 
-                            <?=anchor('main/web','   
-                            <div class="ps_album" >
-					<img  src="../images/standard5.png" />
-					<div class="ps_desc red">
+                            <?=anchor('web','   
+                            <div class="album" >
+					<img  src="images/standard5.png" />
+					<div class="album_desc red">
 						<h2>Web</h2>
 						<span>Web projects I\'ve done for business, myself and friends. I make use of SEO Techniques, HTML5, CSS3, and Javascript with cross browser support. </span>
 					</div>
 				</div>
                              ');?>
-                            <?=anchor('main/projects','
-                            <div class="ps_album">
-					<img  src="../images/standard6.png" />
-					<div class="ps_desc orange">
+                            <?=anchor('projects','
+                            <div class="album">
+					<img  src="images/standard6.png" />
+					<div class="album_desc orange">
 						<h2>Other Projects</h2>
 						<span>From School projects while I\'m attending UW, plugins, and random languages and technologies I wanted to learn along the way.</span>
 					</div>
@@ -31,8 +40,8 @@
                             ');?>
 			</div>
             
-		</div>
-<!--col2 start--><div class="col2" style="margin-top:35px;">
+
+
     
 
                     <div id="newsContainer">
@@ -49,28 +58,28 @@
                                         
                                          <div class="newFeed">
                                                 <h3>03/03/2012</h3>
-                                                <p style="line-height:1.3em;">here is some information1 about this date.... <a href="#">View More</a></p>
+                                                <p>here is some information1 about this date.... <a href="#">View More</a></p>
                                         </div>
                                          <div class="newFeed">
                                                 <h3>04/03/2012</h3>
-                                                <p style="line-height:1.3em;">here is some information1 about this date.... <a href="#">View More</a></p>
+                                                <p>here is some information1 about this date.... <a href="#">View More</a></p>
                                         </div> 
                                         <div class="newFeed">
                                                 <h3 >05/03/2012</h3>
-                                                <p style="line-height:1.3em;">here is some information1 about this date.... <a href="#">View More</a></p>
+                                                <p>here is some information1 about this date.... <a href="#">View More</a></p>
                                         </div>
                                         
                                         <div class="newFeed">
                                                 <h3>06/01/2012</h3>
-                                                <p style="line-height:1.3em;">here is some information1 about this date.... <a href="#">View More</a></p>
+                                                <p>here is some information1 about this date.... <a href="#">View More</a></p>
                                         </div>
                                         <div class="newFeed">
                                                 <h3>06/03/2012</h3>
-                                                <p style="line-height:1.3em;">here is some information1 about this date.... <a href="#">View More</a></p>
+                                                <p>here is some information1 about this date.... <a href="#">View More</a></p>
                                         </div>
                                          <div class="newFeed">
                                                 <h3>06/03/2012</h3>
-                                                <p style="line-height:1.3em;">here is some information1 about this date.... <a href="#">View More</a></p>
+                                                <p>here is some information1 about this date.... <a href="#">View More</a></p>
                                         </div>
                                         <div class="newFeed">
                                                  
@@ -108,7 +117,7 @@
                       $('#newsUp').show();
              });
              
-             $('#newsUp').click(function(e){
+             $('#newsUp').click(function(){
                  if($('#recentNews div:visible:last p').html() === "End"){
                         return false;}
                     
@@ -125,16 +134,14 @@
                       $('#upcomingUp').show();
              });
              
-             $('#upcomingUp').click(function(e){
+             $('#upcomingUp').click(function(){
                  if($('#upcomingNews div:visible:last p').html() === "End"){  $('#upcomingUp').hide();
                         return false;}
                     
                     $('#upcomingNews div:visible:first').hide();
                     $('#upcomingNews div:visible:last').next().fadeIn();
              });
-             
-             
-        
+
         var info = '<div class="newFeed"><h3 style="text-decoration:underline">03/22/2012</h3><p style="line-height:1.3em;">here is some information1 about this date.... <a href="#">View More</a></p></div>';
           });    
   </script>

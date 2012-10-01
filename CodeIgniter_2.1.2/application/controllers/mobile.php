@@ -1,9 +1,9 @@
 <?php
 
-class Web extends CI_Controller{
+class Mobile extends CI_Controller{
     
     
-    function Web(){
+    function Mobile(){
      parent::__construct();
      $this->load->helper('url');
      $this->load->helper('form');
@@ -14,9 +14,10 @@ class Web extends CI_Controller{
         
         $data['url'] = base_url();
         $data['myBread'] = set_breadcrumb();
+        $data['query'] = $this->db->get('phone');
         
         $this->load->view('templates/header.php', $data);
-        $this->load->view('pages/web_view');
+        $this->load->view('pages/mobile_view');
         $this->load->view('templates/footer.php');
     }
 }

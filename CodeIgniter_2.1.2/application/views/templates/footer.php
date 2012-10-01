@@ -25,12 +25,10 @@
 <script>
 	
     $(document).ready(function() {
-         //col1 float in Name and lower nav /
-        $('.col1').animate({
-            'top': '0px'
-        }, 1000, 'easeOutBack');
+        
+
         //onlice dialog blue modal for demos
-        $(".boxee").click(function(index) {	
+        $(".demo").click(function(index) {	
             //$(this).hide('explode', {}, 600);
             $("#dialog-modal").dialog({
                 dialogClass: 'dialogWithDropShadow',

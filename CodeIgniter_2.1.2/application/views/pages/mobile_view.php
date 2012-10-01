@@ -1,13 +1,19 @@
-<!--col2 start--><div class="col2">
+<!--col2 start--><div class="col2" >
+                            
+                            <div class="demos">
 
-                                <div class="demos" id="demos">
-                                    <div class="boxee">
-                                        <a href="#">
-                                            <img src="/img/projects/roundabout/demos/standard.png" alt="Standard" />
-                                            <span>Standard Roundabout</span>
-                                        </a>
+                                <?php foreach($query->result() as $row): ?>
+
+                                    <div class="demo">
+                                            <a href="#">
+                                                <img style="" src="../images/<?=$row->small_image?>" alt="Standard" />
+                                                <div class="title"><?=$row->title?></div>
+                                            </a>
                                     </div>
-                                </div>
-       <!--col2 end--></div>
 
+                                <?php endforeach; ?>
+
+                            </div>
+  <!--col2 end--></div>
+ 
 <!--main end--></div>
