@@ -19,5 +19,12 @@ class Web extends CI_Controller{
         $this->load->view('pages/web_view');
         $this->load->view('templates/footer.php');
     }
+    
+    function get_images(){
+       echo $_POST['title'];
+    }
+
+
+    
 }
 ?>

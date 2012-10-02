@@ -1,0 +1,3 @@
+insert into phone values('','Inclement Weather','Inclement Weather is an app developer for Pierce County employees','incWeatherIcon.png');
+
+insert into phone values('','Meritime','Meritime is an app developed for suspicious activity at the ports','MERITIME_ICON.png');

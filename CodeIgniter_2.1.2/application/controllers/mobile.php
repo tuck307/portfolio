@@ -20,5 +20,16 @@ class Mobile extends CI_Controller{
         $this->load->view('pages/mobile_view');
         $this->load->view('templates/footer.php');
     }
+    
+    function get_images(){
+       
+       $query = $this->db->query('SELECT * FROM phoneimages where title = "'.$_POST['title'].'"');
+        foreach ($query->result() as $row)
+            {
+                $arr = array('title'=>$row->title,'image'=>$row->image,'desc'=>$row->paragraph);
+                echo json_encode($arr);
+            }
+    }
 }
+
 ?>

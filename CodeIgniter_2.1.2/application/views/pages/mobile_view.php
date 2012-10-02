@@ -17,3 +17,48 @@
   <!--col2 end--></div>
  
 <!--main end--></div>
+
+<script>
+    $(document).ready(function() {
+     $(".demo").click(function(index) {
+      var theTitle = $(this).find('.title').text();
+            $.ajax({
+            type: "POST",
+            url: "http://localhost/Portfolio/CodeIgniter_2.1.2/index.php/mobile/get_images",
+            data: { title: theTitle}
+            }).done(function( msg ) {
+                    
+                if(msg !== ''){
+                     msg = $.parseJSON(msg);
+                    $('#dialog-modal').attr('title', msg.title);
+                    $('#dialog-modal').html('<p><img src="../images/'+msg.image+'" /></p>');
+                }else{
+                    $('#dialog-modal').attr('title', '');
+                    $('#dialog-modal').html('');
+                }
+               
+                     $("#dialog-modal").dialog({
+                            dialogClass: 'dialogWithDropShadow',
+                            height: 300,
+                            modal: true,
+                            show: {
+                                effect: 'fade',
+                                duration: 700
+                            },
+                            hide: {
+                                effect: 'fade',
+                                duration: 400
+                            },
+                            open: function(event, ui){
+                                $('body').css('overflow','hidden');
+                                $('.ui-widget-overlay').css('width','100%'); 
+                                $('.ui-widget-overlay').hide().fadeTo(700, 0.5);  
+                            },
+                            beforeClose: function(event, ui){
+                                $('body').css('overflow','auto');
+                            }
+                        });
+            });
+         });
+    });
+</script>

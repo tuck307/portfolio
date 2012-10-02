@@ -30,27 +30,7 @@
         //onlice dialog blue modal for demos
         $(".demo").click(function(index) {	
             //$(this).hide('explode', {}, 600);
-            $("#dialog-modal").dialog({
-                dialogClass: 'dialogWithDropShadow',
-                height: 140,
-                modal: true,
-                show: {
-                    effect: 'fade',
-                    duration: 700
-                },
-                hide: {
-                    effect: 'fade',
-                    duration: 400
-                },
-                open: function(event, ui){
-                    $('body').css('overflow','hidden');
-                    $('.ui-widget-overlay').css('width','100%'); 
-                    $('.ui-widget-overlay').hide().fadeTo(700, 0.5);  
-                },
-                beforeClose: function(event, ui){
-                    $('body').css('overflow','auto');
-                }
-            });
+      
         });
 			
     });
