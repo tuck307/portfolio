@@ -42,6 +42,7 @@ $route['default_controller'] = "main";
 $route['/web'] = "web";
 $route['/mobile'] = "mobile";
 $route['/projects'] = "projects";
+$route['/resume'] = "resume";
 $route['404_override'] = '';
 
 

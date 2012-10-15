@@ -21,13 +21,14 @@
 <script>
     $(document).ready(function() {
      $(".demo").click(function(index) {
+         
       var theTitle = $(this).find('.title').text();
+      console.log(theTitle);
             $.ajax({
             type: "POST",
-            url: "http://localhost/Portfolio/CodeIgniter_2.1.2/index.php/mobile/get_images",
-            data: { title: theTitle}
-            }).done(function( msg ) {
-                    
+            url: "http://localhost:8080/Portfolio/CodeIgniter_2.1.2/index.php/mobile/get_images",
+            data: { title: theTitle},
+            success: function(msg){
                 if(msg !== ''){
                      msg = $.parseJSON(msg);
                     $('#dialog-modal').attr('title', msg.title);
@@ -36,11 +37,13 @@
                     $('#dialog-modal').attr('title', '');
                     $('#dialog-modal').html('');
                 }
-               
+               setTimeout(function(){ $("#dialog-modal").dialog("open"); }, 100);
                      $("#dialog-modal").dialog({
                             dialogClass: 'dialogWithDropShadow',
-                            height: 300,
                             modal: true,
+                            minWidth: 300,
+                            width:'auto',
+                            autoOpen: false,
                             show: {
                                 effect: 'fade',
                                 duration: 700
@@ -58,6 +61,8 @@
                                 $('body').css('overflow','auto');
                             }
                         });
+                        
+                       }
             });
          });
     });

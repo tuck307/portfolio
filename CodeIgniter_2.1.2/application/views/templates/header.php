@@ -7,7 +7,9 @@
         <!--Main Style sheets-->
         <link rel="stylesheet" type="text/css" href="<?=$url?>css/reset.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="<?=$url?>css/main.css" media="screen" />
+        
 
+      
         <!--for all custom ui componets, check for their dependencies-->
         <script>
 if (typeof jQuery == 'undefined') {
@@ -18,11 +20,18 @@ if (typeof jQuery == 'undefined') {
 </script>
         <!--jquery custom theme style -->
         <link rel="stylesheet" type="text/css" href="<?=$url?>js/themes/custom-theme/jquery-ui-1.8.23.custom.css" media="screen" />
-
+        
+        <!--resume pie chart needs to be before jquery -->
+        <script src="<?=$url?>js/raphael.js"></script>
+        
 
         <!--jquery main-->
         <script src="<?=$url?>js/jquery-1.8.0.js"></script>
-
+        
+              <!--jquery waypoints-->
+        <script src="<?=$url?>js/waypoints.min.js"></script>
+    
+        
         <!-- jquery cores ui and effects-->
         <script src="<?=$url?>js/ui/jquery.effects.core.js"></script>
         <script src="<?=$url?>js/ui/jquery.ui.core.js"></script>
@@ -46,8 +55,8 @@ if (typeof jQuery == 'undefined') {
                             <li><a href="#"><span>Admin</span></a></li>
                             <li><a href="#"><span>Blog</span></a></li>
                             <li><a href="#"><span>Contact</span></a></li>
-                            <li><?=anchor('main/aboutMe','<span>About</span>');?></li>
-                            <li><?=anchor('main/Resume','<span>Resume</span>');?></li>
+                            <li><?=anchor('aboutMe','<span>About</span>');?></li>
+                            <li><?=anchor('Resume','<span>Resume</span>');?></li>
                         </ul>
                         <div id="grayBanner">&nbsp;</div>
 <!--header end--> </div>

@@ -215,10 +215,14 @@ h1#name{
     margin-top:40px;
     overflow:auto;
     width:99%;
-    border:2PX solid #393939;
+    /*border:2PX solid #393939;
     background-color:rgba(51, 51, 51, .9);
-    box-shadow:1px 1px 3px black;
+    background:#111 url(../images/body_bg_top.png) repeat;
+    background-size:10% 100%;
+    box-shadow:1px 1px 3px black;*/
     min-height:500px;
+    height:500px;
+    
 }
 
 .demo:hover{
@@ -535,3 +539,266 @@ h1#name{
 #dialog-modal{
     display:none;
 }
+
+/* =Resume View Styles
+-------------------------------------------------------------- */
+
+.resume
+{
+    
+    margin-top:40px;
+    overflow:auto;
+    width:99%;
+    min-height:550px;
+    height:500px;
+    border:2PX solid #393939;
+    background-color:rgba(51, 51, 51, .9);
+   
+    background-size:10% 100%;
+    box-shadow:1px 1px 3px black;
+  
+
+} 
+.resumeDemo
+{
+    
+    width: 180px; 
+    margin:20px;
+    position:absolute;
+    text-align:left;
+    left: 0px;
+
+}
+
+
+.resumeDemo li a
+{
+    text-decoration:none;
+    text-align:left;
+    display: block;
+    color: #ccc;
+    font-size: 16px;
+    margin: 0.5em 0;
+    line-height: 1em;
+    padding: 4px 5px;
+    text-shadow: 0 1px 3px black;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: DejaVu-regular, arial, helvetica;
+}
+
+.resumeDemo li a:hover
+{
+  color:white;
+}
+
+svg{
+    width: 250px;
+    height:250px;
+}
+#resumeContainer h3 {
+    font-size: 24px;
+    color: white;
+    font-family: DejaVu-regular, arial, helvetica;
+    margin-top:20px;
+    text-shadow: 0 1px 3px black;
+    
+}
+#resumeContainer h4 {
+font-size: 14px;
+color: white;
+font-family: DejaVu-regular, arial, helvetica;
+margin: 1.286em 0 0;
+padding: 0;
+line-height: 1.286em;
+text-shadow: 0 1px 3px black;
+}
+
+.section1{
+    width:54%;
+    float:left;
+    color: #CCC;
+    text-shadow: 0 1px 3px black;
+    font-size: 12px;
+overflow:auto;
+line-height: 1.5em;
+font-family: DejaVu-regular, arial, helvetica;
+margin: 1.5em 0 0;
+padding-bottom:20px;
+}
+
+.sectionResume{
+    width:90%;
+    float:left;
+    color: #CCC;
+    text-shadow: 0 1px 3px black;
+    font-size: 12px;
+    overflow:auto;
+    line-height: 1.5em;
+    font-family: DejaVu-regular, arial, helvetica;
+    margin: 1.5em 0 0;
+    padding-bottom:20px;
+}
+
+.divider{
+    background: url(../images/h-line.gif) repeat 0 0 transparent;
+    width: 85%;
+    min-width:560px;
+    height: 2px;
+    clear:both;
+    margin-top: 15px;
+}
+
+.dividerSection{
+    background: url(../images/h-line.gif) repeat 0 0 transparent;
+    width: 80%;
+
+    height: 2px;
+    clear:both;
+    display:block;
+    margin:0 0 0 20px;
+}
+.demo.resumeDemo div.title
+{ 
+    font-size:20px;
+    font-weight:bold;
+    position:relative;
+    margin:5px;
+}
+
+.demo.resumeDemo span
+{
+    font-size:14px;
+    color:black;
+    font-weight: bold;
+    opacity:.5;
+}
+
+.demo:hover span{
+     opacity:1;
+     -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+#gototop{
+    position:absolute;
+    bottom:100px; 
+    right:40px; 
+    opacity:0;
+}
+
+#gototop.on{
+    display:inline;
+    
+}
+#current{
+    color:white;
+}
+
+.imageClick img{
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+     
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+     cursor:pointer;
+    overflow:hidden;
+ 
+    }   
+ 
+.imageClick img:hover  
+{ 
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg); 
+    -o-transform:rotate(360deg);
+} 
+
+
+h4 span{
+    float:right;;
+
+margin-right: 20%;
+background: #494646;
+color: white;
+display: block;
+float: right;
+font-family: DejaVu-regular,arial,helvetica;
+font-size: 12px;
+padding: 0px 10px;
+opacity: .9;
+}
+.outer {
+    width:200px;
+    height:300px;
+    background-color:red;
+    margin:0 auto;
+    overflow:auto;    
+}
+.inner {
+    width:182px;
+    border:1px solid white;
+    position:absolute;
+    background-color:buttonface;
+    text-align:right;
+}
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 16px;
+    height:16px;
+    
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  
+  
+}
+ 
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0,102,153,0.7); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+     border:1px solid black;
+     
+ 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,102,153,.9); 
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,102,153,0.7); 
+}
+
+
+
+/* Turn on single button up on top, and down on bottom */
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: block;
+    background-color:transparent;
+}
+
+/* Turn off the down area up on top, and up area on bottom */
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement {
+    display: none;
+}
+
+
+
+
