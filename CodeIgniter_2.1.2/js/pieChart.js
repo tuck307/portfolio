@@ -16,13 +16,11 @@ Raphael.fn.pieChart = function (cx, cy, r, values, labels, stroke) {
         process = function (j) {
             var value = values[j],
                 angleplus = 360 * value / total,
-                popangle = angle + (angleplus / 2),
                 color = Raphael.hsb(start, .6, .9),
                 ms = 500,
-                delta = 30,
                 bcolor = Raphael.hsb(start, 1, .7),
                 p = sector(cx, cy, r, angle, angle + angleplus, {fill: "90-" + bcolor + "-" + color, stroke: stroke, "stroke-width": 1}),
-                txt = paper.text(60, 22, labels[j]).attr({fill: bcolor, stroke: "none", opacity: 0, "font-size": 20});
+                txt = paper.text(85, 20, labels[j]).attr({fill: bcolor, stroke: "none", opacity: 0, "font-size": 20});
             p.mouseover(function () {
                 p.stop().animate({transform: "s1.1 1.1 " + cx + " " + cy}, ms, "elastic");
                 txt.stop().animate({opacity: 1}, ms, "elastic");
@@ -52,6 +50,6 @@ $(function () {
         labels.push($("th", this).text());
     });
     $("table").hide();
-    Raphael("holder", 0, 0).pieChart(150, 120, 80, values, labels, "#fff");
+    Raphael("holder", 0, 0).pieChart(120, 120, 80, values, labels, "#fff");
 
 });

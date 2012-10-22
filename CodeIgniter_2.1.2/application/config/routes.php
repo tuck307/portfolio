@@ -38,11 +38,14 @@
 |
 */
 
-$route['default_controller'] = "main";
-$route['/web'] = "web";
-$route['/mobile'] = "mobile";
-$route['/projects'] = "projects";
+$route['default_controller'] = "home";
+$route['/portfolio'] = "portfolio";
+//$route['/web'] = "web";
+//$route['/mobile'] = "mobile";
+//$route['/projects'] = "projects";
 $route['/resume'] = "resume";
+$route['/aboutMe'] = "aboutMe";
+$route['/contact'] = "contact";
 $route['404_override'] = '';
 
 

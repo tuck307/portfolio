@@ -14,7 +14,7 @@ body {
     background: url(../images/slider-background.jpg) repeat-x;
     background-position: 0% 240px;
     z-index:-1;
-    min-height:800px;
+    /*min-height:800px;*/
 }
 
 
@@ -57,6 +57,8 @@ p{
     -moz-box-shadow: 0px 1px 2px -1px rgba(0,0, 0,.8);
     -webkit-box-shadow: 0px 1px 2px -1px rgba(0,0, 0,.8);
 }
+
+
 
 #header ul#topNav {
     text-align:right;
@@ -105,7 +107,7 @@ p{
 #main {
     position:relative;	/* This fixes the IE7 overflow hidden bug */
     clear:both;
-    overflow:hidden;		/* This chops off any overhanging divs */
+    /*overflow:hidden;		 This chops off any overhanging divs */
     padding-bottom:60px;   /* Height of the footer */
     max-width:1015px;
     margin:auto;
@@ -206,6 +208,7 @@ h1#name{
 -------------------------------------------------------------- */
 .col2{
     margin-top:40px;
+    margin-bottom: -50px;
 }
 
 
@@ -222,11 +225,11 @@ h1#name{
     box-shadow:1px 1px 3px black;*/
     min-height:500px;
     height:500px;
-    
+
 }
 
 .demo:hover{
-       border:7px solid #373737;
+    border:7px solid #373737;
 }
 
 .demo{
@@ -264,8 +267,8 @@ h1#name{
 }
 
 .demo:hover .title{
-       opacity:1;
-         -webkit-transition: all 0.4s ease-in-out;
+    opacity:1;
+    -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
@@ -313,18 +316,14 @@ h1#name{
 
 
 
-
-
-
-
 /* =MAIN VIEW: albums=container for album
 -------------------------------------------------------------- */
 
 #albums{
-	float:left;
-	position:relative;
-	margin:80px auto 0px auto;
-        width:72%;
+    float:left;
+    position:relative;
+    margin:0px auto 0px auto;
+    width:100%;
 
 }
 #albums a:visited{
@@ -345,29 +344,30 @@ h1#name{
 }
 
 .album{
-	width:27%;
-	/*height:310px;*/
-	padding:10px;
-        max-width:175px;
-	background-color:#333;
-	border:1px solid #444;
-        float:left;
-        margin-right:10px;
-	text-align:center;
-	cursor:pointer;
-	-moz-box-shadow:1px 1px 4px #000;
-	-webkit-box-shadow:1px 1px 4px #000;
-	box-shadow:1px 1px 4px #000;
-	/*-webkit-box-reflect:
-		below 5px 
-		-webkit-gradient(
-			linear, 
-			left top, 
-			left bottom, 
-			from(transparent), 
-			color-stop(0.6, transparent), 
-			to(rgb(18, 18, 18))
-		);*/
+    width:26%;
+    /*height:310px;*/
+    padding:10px;
+margin: 2%;
+    background-color:#333;
+    border:1px solid #444;
+    float:left;
+
+    text-align:center;
+    cursor:pointer;
+    position:relative;
+    -moz-box-shadow:1px 1px 4px #000;
+    -webkit-box-shadow: 2px 2px 3px black;
+    box-shadow:2px 2px 3px black;
+    /*-webkit-box-reflect:
+            below 5px 
+            -webkit-gradient(
+                    linear, 
+                    left top, 
+                    left bottom, 
+                    from(transparent), 
+                    color-stop(0.6, transparent), 
+                    to(rgb(18, 18, 18))
+            );*/
 
 }
 
@@ -381,12 +381,14 @@ h1#name{
 }
 
 .album img{
-    width:98%;
-    height:100px;
-    border:1px solid #444;
+
+    display:block;
+    margin:auto;
+    margin-bottom:5px;
+   /* border:1px solid #444;
     -moz-box-shadow:1px 1px 4px #000;
     -webkit-box-shadow:1px 1px 4px #000;
-    box-shadow:1px 1px 4px #000   
+    box-shadow:1px 1px 4px #000   */
 }
 
 .album a:hover{
@@ -399,11 +401,11 @@ h1#name{
     background:#111 url(../images/overlay.png) no-repeat bottom right;
     background-size:100% 100%;
     /*height:200px;*/
-    margin-top:10px;
+    position:relative;
     text-align:left;
     line-height:20px;
-    min-height: 203px;
-    max-height:203px;
+    min-height: 260px;
+
     overflow:hidden;
     text-overflow:ellipsis;
     border:1px solid #393939;
@@ -418,34 +420,47 @@ h1#name{
 }
 
 .album .album_desc span{
-	display:block;
-	margin:0px 10px 10px 10px;
-	border-top:1px solid #333;
-	padding-top:5px;
+    display:block;
+    margin:0px 10px 10px 10px;
+    border-top:1px solid #333;
+    padding-top:5px;
+    min-height: 100px;
 }
 .album .album_desc h2{
-	margin:10px 10px 0px 10px;
-	text-align:left;
-	padding-bottom:5px;
-	font-weight:normal;
-	color:#ddd;
-	text-shadow:0px 0px 1px #fff;
-	border-bottom:1px solid #000;
+    margin:10px 10px 0px 10px;
+    text-align:left;
+    padding-bottom:5px;
+    font-weight:normal;
+    color:#ddd;
+    text-shadow:0px 0px 1px #fff;
+    border-bottom:1px solid #000;
 }
 
 .album:hover .blue{
-	background:#111 url(../images/greenOverlay.png) no-repeat bottom right;
-	background-size:100% 100%;    
-}
-.album:hover .red{
-	background:#111 url(../images/orOverlay.png) no-repeat bottom right;
-	background-size:100% 100%;
+    background:#111 url(../images/blueOverlay.png) no-repeat bottom right;
+    background-size:100% 100%;    
 }
 .album:hover .orange{
-    background:#111 url(../images/blueOverlay.png) no-repeat bottom right;
+    background:#111 url(../images/orOverlay.png) no-repeat bottom right;
+    background-size:100% 100%;
+}
+.album:hover .green{
+    background:#111 url(../images/greenOverlay.png) no-repeat bottom right;
+    background-size:100% 100%;	
+}
+.album:hover .purple{
+    background:#111 url(../images/purpleOverlay.png) no-repeat bottom right;
+    background-size:100% 100%;	
+}
+.album:hover .yellow{
+    background:#111 url(../images/linux_Overlay.png) no-repeat bottom right;
     background-size:100% 100%;	
 }
 
+.album .yellow{
+     background:#111 url(../images/linuxOverlay.png) no-repeat bottom right;
+     background-size:100% 100%;
+}
 
 #newsContainer{
     width:25%;
@@ -454,7 +469,7 @@ h1#name{
     top:12px;
 }
 .news{
-   
+
     background-color:#333;
     border:1px solid #444;
     color:white;
@@ -509,14 +524,14 @@ h1#name{
     -webkit-box-shadow:0px 0px 2px #333;
     box-shadow:0px 2px 0px -1px #333;
     padding:0px 3px;
-    
+
 }
 .imgUp{
     border:1px solid transparent;
     opacity:.7;
     position:relative;
- 
-   margin:auto;
+
+    margin:auto;
 }
 .imgUp:hover{
     border:1px solid  #006699;
@@ -543,25 +558,28 @@ h1#name{
 /* =Resume View Styles
 -------------------------------------------------------------- */
 
-.resume
+.resume, #contact_container
 {
-    
-    margin-top:40px;
+
+
     overflow:auto;
     width:99%;
     min-height:550px;
-    height:500px;
+    height:570px;
+
     border:2PX solid #393939;
     background-color:rgba(51, 51, 51, .9);
-   
+
     background-size:10% 100%;
     box-shadow:1px 1px 3px black;
-  
+
 
 } 
+
+
 .resumeDemo
 {
-    
+
     width: 180px; 
     margin:20px;
     position:absolute;
@@ -589,42 +607,61 @@ h1#name{
 
 .resumeDemo li a:hover
 {
-  color:white;
+    color:white;
 }
-
+/* =SVG stuff
+-------------------------------------------------------------- */
 svg{
-    width: 250px;
+    width: 212px;
     height:250px;
 }
-#resumeContainer h3 {
+#holder{
+    position:relative;
+    top:-40px;
+    width: 37%;
+    float: right;
+}
+/*end of svg stuff*/
+
+#resumeContainer{
+    min-height:1200px;
+    padding-bottom:325px;
+    float:right;
+    width:78%;
+    position:relative;
+}
+
+
+
+#resumeContainer h3, #contact_container h3 {
     font-size: 24px;
     color: white;
     font-family: DejaVu-regular, arial, helvetica;
     margin-top:20px;
     text-shadow: 0 1px 3px black;
-    
+
 }
 #resumeContainer h4 {
-font-size: 14px;
-color: white;
-font-family: DejaVu-regular, arial, helvetica;
-margin: 1.286em 0 0;
-padding: 0;
-line-height: 1.286em;
-text-shadow: 0 1px 3px black;
+    font-size: 14px;
+    color: white;
+    font-family: DejaVu-regular, arial, helvetica;
+    margin: 1.286em 0 0;
+    padding: 0;
+    line-height: 1.286em;
+    text-shadow: 0 1px 3px black;
 }
 
 .section1{
-    width:54%;
+    width:63%;
     float:left;
     color: #CCC;
     text-shadow: 0 1px 3px black;
     font-size: 12px;
-overflow:auto;
-line-height: 1.5em;
-font-family: DejaVu-regular, arial, helvetica;
-margin: 1.5em 0 0;
-padding-bottom:20px;
+    overflow:auto;
+    line-height: 1.5em;
+    font-family: DejaVu-regular, arial, helvetica;
+    margin: 1.5em 0 0;
+    padding-bottom:20px;
 }
 
 .sectionResume{
@@ -650,9 +687,9 @@ padding-bottom:20px;
 }
 
 .dividerSection{
-    background: url(../images/h-line.gif) repeat 0 0 transparent;
+    background: url(../images/h-line.gif) repeat 0 0  transparent;
     width: 80%;
-
+    /* box-shadow:0px 1px 0px rgba(0, 102, 153,.1);*/
     height: 2px;
     clear:both;
     display:block;
@@ -675,8 +712,8 @@ padding-bottom:20px;
 }
 
 .demo:hover span{
-     opacity:1;
-     -webkit-transition: all 0.4s ease-in-out;
+    opacity:1;
+    -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
@@ -685,17 +722,26 @@ padding-bottom:20px;
 
 #gototop{
     position:absolute;
-    bottom:100px; 
+    bottom:50px; 
     right:40px; 
     opacity:0;
 }
 
-#gototop.on{
-    display:inline;
-    
-}
 #current{
     color:white;
+}
+
+.resumeImagesContainer{
+    float:right;
+    width:37%;
+    height:250px;
+}
+
+.imageClick{
+    width:35%;
+    height:100px;
+    margin-left:5%;
+    float:left;
 }
 
 .imageClick img{
@@ -703,85 +749,84 @@ padding-bottom:20px;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.8s;
     transition-duration: 0.8s;
-     
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
     -o-transition-property: -o-transform;
     transition-property: transform;
-     cursor:pointer;
+    cursor:pointer;
     overflow:hidden;
- 
-    }   
- 
+    margin:auto;
+    display:block;
+    
+    -webkit-transition: all .2s ease-in-out; 
+    -webkit-transform: scale(.9); 
+
+}   
+
 .imageClick img:hover  
 { 
-    -webkit-transform:rotate(360deg);
+    /*-webkit-transform:rotate(360deg);
     -moz-transform:rotate(360deg); 
-    -o-transform:rotate(360deg);
+    -o-transform:rotate(360deg);*/
+     -webkit-transform: scale(1.0);
 } 
 
 
 h4 span{
     float:right;;
 
-margin-right: 20%;
-background: #494646;
-color: white;
-display: block;
-float: right;
-font-family: DejaVu-regular,arial,helvetica;
-font-size: 12px;
-padding: 0px 10px;
-opacity: .9;
+    margin-right: 20%;
+    background: #494646;
+    color: white;
+    display: block;
+    float: right;
+    font-family: DejaVu-regular,arial,helvetica;
+    font-size: 12px;
+    padding: 0px 10px;
+    opacity: .9;
 }
-.outer {
-    width:200px;
-    height:300px;
-    background-color:red;
-    margin:0 auto;
-    overflow:auto;    
+#Employment, #Education, #References{
+    display:none;
 }
-.inner {
-    width:182px;
-    border:1px solid white;
-    position:absolute;
-    background-color:buttonface;
-    text-align:right;
-}
+
+
+
+/* =WEB-KIT SCROLL BAR STYLES
+-------------------------------------------------------------- */
 /* Let's get this party started */
 ::-webkit-scrollbar {
     width: 16px;
     height:16px;
-    
+
 }
- 
+
 /* Track */
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9); 
     -webkit-border-radius: 10px;
     border-radius: 10px;
-  
-  
+
+
 }
- 
+
 
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: rgba(0,102,153,0.7); 
+    background: rgba(97,97,97,.8); 
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-     border:1px solid black;
-     
- 
+    border:1px solid black;
+
+
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0,102,153,.9); 
+    background:rgba(97,97,97,1); 
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(0,102,153,0.7); 
+    background: rgba(97,97,97,.8); 
 }
 
 
@@ -800,5 +845,327 @@ opacity: .9;
 }
 
 
+/* =About View
+-------------------------------------------------------------- */
+
+#pic_frame_wrapper {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-transform: rotate(12deg) translate(0px, 0px);
+    -moz-transform: rotate(12deg) translate(0px, 0px);
+    -webkit-transform: rotate(12deg) translate(0px, 00px);
+    -o-transform: rotate(12deg) translate(0px, 0px);
+    transform: rotate(12deg) translate(0px, 0px);
+    background: #222;
+    padding: 10px 10px 0px 10px;
+    position:relative;
+    top:-20px;
+    left:-20px;
+    z-index: 10;
+    
+}
+
+.box-shadow {
+    -moz-box-shadow: 5px 5px 10px #888;
+    -webkit-box-shadow: 5px 5px 10px #888;
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.85);
+   border: 1px solid rgba(0, 0, 0, 0.75);
+    -webkit-backface-visibility:hidden;
+          width: 170px;
+
+}
+
+.resumeDemo li:first-child{
+    margin-bottom:-10px;
+}
+
+#pic_frame_aboutMe {
+    width: 178px;
+    height: 193px;
+    position:relative;
+   left:-3px;
+   top:-5px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-transform: rotate(-12deg) translate(0px, 0px);
+    -moz-transform: rotate(-12deg) translate(0px, 0px);
+    -webkit-transform: rotate(-12deg) translate(0px, 00px);
+    -o-transform: rotate(-12deg) translate(0px, 0px);
+    transform: rotate(-12deg) translate(0px, 0px);
+    -webkit-backface-visibility:hidden;
+    background: url(../images/me.jpg) no-repeat 10px 10px white;
+  
+
+}
+
+#pic_frame_resume {
+    width: 178px;
+    height: 193px;
+     position:relative;
+   left:-3px;
+   top:-5px;
+    -webkit-backface-visibility:hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-transform: rotate(-12deg) translate(0px, 0px);
+    -moz-transform: rotate(-12deg) translate(0px, 0px);
+    -webkit-transform: rotate(-12deg) translate(0px, 00px);
+    -o-transform: rotate(-12deg) translate(0px, 0px);
+    transform: rotate(-12deg) translate(0px, 0px);
+    background: url(../images/resume_icon.jpg) no-repeat 20px 20px white;
+}
 
 
+/* =Contact View
+-------------------------------------------------------------- */
+.split_col_wrapper {
+overflow: hidden;
+width: 95%;
+margin: auto;
+
+}
+
+#contactform .input:hover, #contactform .textarea:hover, #contactform .input:focus, #contactform .textarea:focus, select:focus {
+border-color: #C9C9C9;
+-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+}
+
+#contactform .textarea, #contactform .input, select{
+box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 1px;
+-moz-box-shadow: rgba(0,0,0, 0.5) 0px 0px 1px;
+-webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 1px;
+}
+
+.split_col1 {
+width: 55%;
+float: left;
+margin-left:2%;
+}
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+display: block;
+}
+.split_col_wrapper p {
+color: #CCC;
+text-shadow: 0 1px 3px black;
+}
+.split_col2 {
+width: 35%;
+float: left;
+margin-left:5%;
+margin-top:60px;
+}
+.split_col2 p{
+margin-top:20px;
+}
+section {
+width: 564px;
+padding: 18px 0 18px 36px;
+text-align: justify;
+}
+p.footnote {
+font-size: 10px;
+line-height: 1.8em;
+margin: 0.9em 0;
+}
+#printed-footnote {
+display: none;
+}
+.split_col_wrapper p {
+color: #CCC;
+text-shadow: 0 1px 3px black;
+}
+.social_media {
+line-height: 24px;
+height:30px;
+}
+.social_media a{
+width: 100%;
+display: block;
+height: 30px;
+}
+.social_media span{
+margin-left:50px;
+}
+
+#facebook {
+background: url(../images/facebook.png) no-repeat center left transparent;
+}
+#linkedin {
+background: url(../images/linkedin.png) no-repeat center left transparent;
+}
+#twitter {
+background: url(../images/twitter.png) no-repeat center left transparent;
+}
+.social_media a:hover {
+color: white;
+text-decoration: underline;
+}
+.social_media a {
+color: #999;
+text-decoration: none;
+cursor: pointer;
+font-family: DejaVu-regular, arial, helvetica;
+}
+
+#contactform {
+background: #D6D6D6;
+padding: 0 20px 20px;
+margin-top: 18px;
+overflow: hidden;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+position: relative;
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+border: 1px solid white;
+margin-bottom: 5px;
+}
+
+span.error {
+text-align: left;
+color: red;
+display: block;
+line-height: 1.5em;
+}
+
+
+#contactform .input {
+background: white;
+border: solid 1px #E5E5E5;
+color: #555;
+outline: 0;
+width:50%;
+background: -webkit-gradient(linear, left top, left 25, from(white), color-stop(4%, #FDFCFC), to(white));
+}
+
+#contactform .submit_btn {
+margin: 1.5em 0 0;
+width: 200px;
+float: right;
+background: #555;
+color: white;
+border: 1px solid #CCC;
+cursor: pointer;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, 0.65)), color-stop(100%,rgba(0, 0, 0, 0.5)));
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, 0.5)), color-stop(100%,rgba(0, 0, 0, 0.8)));
+border: 1px solid #555;
+}
+#contactform label {
+padding: 10px 0 0;
+display: block;
+line-height: 1.5em;
+cursor: pointer;
+color: #333;
+}
+#contactform .textarea {
+padding: 0.75em 10px;
+width: 180px;
+font-family: DejaVu-regular, arial, helvetica;
+font-size: 12px;
+width:90%;
+height: 106px;
+background: -webkit-gradient(linear, left top, left 25, from(white), color-stop(4%, #FDFCFC), to(white));
+}
+
+#contactform .textfield {
+padding: 0.75em 10px;
+font-family: DejaVu-regular, arial, helvetica;
+font-size: 12px;
+
+}
+
+.styled-select {
+    width: 240px;
+    height: 30px;
+    overflow: hidden;
+    background: url(../images/down_arrow_select.jpg) no-repeat right rgba(4, 124, 235, 0.65);
+}
+.styled-select select {
+    background: transparent;
+    width: 240px;
+    padding: 5px;
+    border: 1px solid #CCC;
+    font-size: 16px;
+    height: 30px;
+    -webkit-appearance: none;
+    border: 1px solid #999797;
+border-radius: 2px;
+}
+a.ps_close {
+background: black url(../images/close.png) no-repeat center center;
+cursor: pointer;
+width: 56px;
+height: 56px;
+position: fixed;
+right: 10px;
+top: 10px;
+z-index: 999999;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+opacity: 0.6;
+display:none;
+filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+}
+
+a.ps_right {
+background:url(../images/right.png) no-repeat center center;
+   display:none;
+cursor: pointer;
+width: 90px;
+height: 90px;
+position: fixed;
+right: 500px;
+top: 300px;
+z-index: 999999;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+opacity: 0.6;
+
+filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+}
+a.ps_right:hover {
+background:url(../images/right_hover.png) no-repeat center center;
+}
+
+a.ps_left {
+    display:none;
+background:url(../images/arrow_left.png) no-repeat center center;
+cursor: pointer;
+width: 90px;
+height: 90px;
+position: fixed;
+left: 500px;
+top: 300px;
+z-index: 999999;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+opacity: 0.6;
+filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+}
+
+a.ps_left:hover {
+background:url(../images/left_hover.png) no-repeat center center;
+}
+
+a.ps_next_photo:hover, a.ps_close:hover {
+opacity: 0.8;
+filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+}
+
+
+.grayBanner{
+    height:3px;
+    background:#D9D9D9;
+    /*background:#ACACAC;*/
+    clear:both;
+   box-shadow: 0px -1px 2px black inset;
+}

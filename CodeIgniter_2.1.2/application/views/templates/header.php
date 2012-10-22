@@ -52,11 +52,11 @@ if (typeof jQuery == 'undefined') {
 
 <!--header start--><div id="header">
                         <ul id="topNav">
-                            <li><a href="#"><span>Admin</span></a></li>
                             <li><a href="#"><span>Blog</span></a></li>
-                            <li><a href="#"><span>Contact</span></a></li>
+                            <li><?=anchor('Contact','<span>Contact</span>');?></li>
                             <li><?=anchor('aboutMe','<span>About</span>');?></li>
                             <li><?=anchor('Resume','<span>Resume</span>');?></li>
+                            <li><?=anchor('portfolio','<span>Portfolio</span>');?></li>
                         </ul>
                         <div id="grayBanner">&nbsp;</div>
 <!--header end--> </div>

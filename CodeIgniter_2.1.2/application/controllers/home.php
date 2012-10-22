@@ -1,8 +1,8 @@
 <?php
 
-class Main extends CI_Controller {
+class Home extends CI_Controller {
 
-    function Main(){
+    function Home(){
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('form');
@@ -14,17 +14,9 @@ class Main extends CI_Controller {
         $data['url'] = base_url();
         $data['myBread'] = set_breadcrumb();
         $this->load->view('templates/header.php', $data);
-        $this->load->view('main_view');
+        $this->load->view('home');
         $this->load->view('templates/footer.php');
     }
-    
-    function aboutMe(){
-        $data['url'] = base_url();
-        $this->load->view('templates/header.php', $data);
-        $this->load->view('pages/aboutMe_view');
-        $this->load->view('templates/footer.php');
-    }
-    
 
 }
 

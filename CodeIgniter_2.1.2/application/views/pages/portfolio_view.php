@@ -1,41 +1,70 @@
-<script>
-    $(document).ready(function() {
-         //col1 float in Name and lower nav /
-         $('.col1').css('top','-600px');
-        $('.col1').animate({
-            'top': '0px'
-        }, 1000, 'easeOutBack');
-    });
-</script>
 <!--col2 start--><div class="col2">
 
 			<div id="albums">
-                             <?=anchor('mobile','   
+                             <?=anchor('portfolio/mobile','   
 			     <div class="album" >
                                     
-                                         <img  src="images/standard2.png" />
-					<div class="album_desc blue">
+                                       
+					<div class="album_desc green">
 						<h2>Mobile Apps</h2>
 						<span>Here are some of my mobile projects coded in Sencha touch for hybrid, objective-c for iphone and java for android</span>
-					</div>
+                                             <img  src="../images/android_apple_main.png" />
+                                        </div>
 				</div>
                              ');?> 
-                            <?=anchor('web','   
+                            <?=anchor('portfolio/web','   
                             <div class="album" >
-					<img  src="images/standard5.png" />
-					<div class="album_desc red">
+					
+					<div class="album_desc orange">
 						<h2>Web</h2>
 						<span>Web projects I\'ve done for business, myself and friends. I make use of SEO Techniques, HTML5, CSS3, and Javascript with cross browser support. </span>
-					</div>
+                                            <img  src="../images/standard5.png" />
+                                        </div>
 				</div>
                              ');?>
-                            <?=anchor('projects','
+                            <?=anchor('portfolio/projects','
                             <div class="album">
-					<img  src="images/standard6.png" />
+					
+					<div class="album_desc purple">
+						<h2>School Projects</h2>
+						<span>From School projects while I\'m attending UW, plugins, and random languages and technologies I wanted to learn along the way.</span>
+					<img  src="../images/uw_logo_main.png" />
+                                        </div>
+				</div>
+                                
+                            ');?>
+                            
+                             <?=anchor('portfolio/projects','
+                            <div class="album">
+					
+					<div class="album_desc yellow">
+						<h2>Open Source Projects</h2>
+						<span>From School projects while I\'m attending UW, plugins, and random languages and technologies I wanted to learn along the way.</span>
+					
+                                        </div>
+				</div>
+                            ');?>
+                            
+                                                        
+                             <?=anchor('portfolio/projects','
+                            <div class="album">
+					
+					<div class="album_desc blue">
+						<h2>Non-profit/Volunteer Projects</h2>
+						<span>From School projects while I\'m attending UW, plugins, and random languages and technologies I wanted to learn along the way.</span>
+					<img  src="../images/standard6.png" />
+                                        </div>
+				</div>
+                            ');?>
+                            
+                            <?=anchor('portfolio/projects','
+                            <div class="album">
+					
 					<div class="album_desc orange">
 						<h2>Other Projects</h2>
 						<span>From School projects while I\'m attending UW, plugins, and random languages and technologies I wanted to learn along the way.</span>
-					</div>
+					<img  src="../images/standard6.png" />
+                                        </div>
 				</div>
                             ');?>
 			</div>
@@ -44,7 +73,7 @@
 
     
 
-                    <div id="newsContainer">
+                    <!--<div id="newsContainer">
 
                                 <div class="news">
                                     <h2>Recent Events</h2>
@@ -93,7 +122,7 @@
                         
                         
                                
-                    </div>
+                    </div>-->
      
 <!--col2 end--></div>
 
@@ -101,6 +130,11 @@
       
       <script>
           $(document).ready(function(){
+              
+              
+              
+
+
              // $('#mainInfo').delay(1200).slideDown(800);
         $('.newFeed:lt(2),.upcomingFeed:lt(4)').hide();
         $('.newFeed:gt(6),.upcomingFeed:gt(6)').hide();

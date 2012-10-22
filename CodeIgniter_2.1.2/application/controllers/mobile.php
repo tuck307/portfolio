@@ -17,7 +17,7 @@ class Mobile extends CI_Controller{
         $data['query'] = $this->db->get('phone');
         
         $this->load->view('templates/header.php', $data);
-        $this->load->view('pages/mobile_view');
+        $this->load->view('pages/portfolio/mobile_view');
         $this->load->view('templates/footer.php');
     }
     
