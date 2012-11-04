@@ -15,8 +15,10 @@
                         <div id="back-footer"></div>
 <!--foot end--></div>
 <a id="ps_close" class="ps_close ps_show" style=""></a>
-<a id="ps_right" class="ps_right ps_show" style=""></a>
-<a id="ps_left" class="ps_left ps_show" style=""></a>
+<a id="right" class="ps_right ps_show" style=""></a>
+<a id="left" class="ps_left ps_show" style=""></a>
+
+
                 <div id="dialog-modal"  title="Basic modal dialog">
                     <p>Adding the modal overlay screen makes the dialog look more prominent because it dims out the page content.</p>
                    

@@ -24,12 +24,16 @@ class Mobile extends CI_Controller{
     function get_images(){
        
        $query = $this->db->query('SELECT * FROM phoneimages where title = "'.$_POST['title'].'"');
+       $arr["mobile_items"] = array();
         foreach ($query->result() as $row)
             {
-                $arr = array('title'=>$row->title,'image'=>$row->image,'desc'=>$row->paragraph);
-                echo json_encode($arr);
+                $arr["mobile_items"][] = array('title'=>$row->title,'image'=>$row->image,'desc'=>$row->paragraph);
+               
             }
-    }
+            echo json_encode($arr);
+
+    } 
+    
 }
 
 ?>

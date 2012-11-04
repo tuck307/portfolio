@@ -52,9 +52,8 @@ if (typeof jQuery == 'undefined') {
 
 <!--header start--><div id="header">
                         <ul id="topNav">
-                            <li><a href="#"><span>Blog</span></a></li>
-                            <li><?=anchor('Contact','<span>Contact</span>');?></li>
                             <li><?=anchor('aboutMe','<span>About</span>');?></li>
+                            <li><?=anchor('Contact','<span>Contact</span>');?></li>
                             <li><?=anchor('Resume','<span>Resume</span>');?></li>
                             <li><?=anchor('portfolio','<span>Portfolio</span>');?></li>
                         </ul>
@@ -63,7 +62,7 @@ if (typeof jQuery == 'undefined') {
 
 
 <!--main start--><div id="main">
-    <!--col1 start--><div class="col1">
+    <!--col1 start--><div id="col1">
                              <?=anchor('','<h1 id="name" style="color:black;">Dwayne Tucker</h1>');?>
                              <?=$myBread?>
 <!--                            <ul id="navigation">
