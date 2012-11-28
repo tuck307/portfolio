@@ -1,6 +1,6 @@
 
-<!--col2 start--><div class="col2" >
-                            
+<!--col2 start--><div class="col2" style="background-color:white;padding-bottom:150px;border:1px solid black;">
+    <h2 style="margin:auto;display:block;width:50px;margin-top:10px;font-size:18px;">TETRIS</h2>
 <!--                            <div class="demos">
                                     
                                     <div class="demo">
@@ -39,10 +39,50 @@
                                     </div>
                                     
                            </div>-->
- <script src="<?=$url?>js/tetris/pieces.js"></script>
-<canvas id="myCanvas" width="200" height="400" style="border:1px solid #c3c3c3;">
+
+ <div style="width:300px;float:left;position:relative;left:50px;">
+     <div style="padding:0 5px 5px 5px;text-align:center;background-color:gray;">
+         <p style="margin-top:40px; padding-top:20px; font-size:30px;">Game Players</p>
+         <div style="height:80px;border: 1px solid black;margin:1px;">
+             <div style="float:left;height:100%;background-color:red;width:20%;line-height: 4;">1st</div>
+             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player jon</div>
+         </div>
+         
+         <div style="height:80px;border: 1px solid black;margin:1px;">
+             <div style="float:left;height:100%;background-color:red;width:20%;line-height: 4;">2nd</div>
+             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player jon</div>
+         </div>
+         
+         <div style="height:80px;border: 1px solid black;margin:1px;">
+             <div style="float:left;height:100%;background-color:red;width:20%;line-height: 4;">3rd</div>
+             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player jon</div>
+         </div>
+         
+         <div style="height:80px;border: 1px solid black;margin:1px;">
+             <div style="float:left;height:100%;background-color:red;width:20%;line-height: 4;">4th</div>
+             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player jon</div>
+         </div>
+         
+     </div>
+
+ </div>
+<div style="width:300px;height:500px;float:right;position:relative;right:50px;">
+    
+     <div style="height:210px;text-align:center;background-color:gray;">
+         <p style="margin-top:40px;padding-top:20px; ">next piece</p>
+     </div>
+     <div style="text-align:center;height:210px;background-color:gray;">
+         <p style="margin-top:40px;padding-top:20px; ">score board</p>
+     </div>
+ 
+ </div>
+<script src="<?=$url?>js/tetris/pieces.js"></script>
+ <div style="margin:auto;width:200px;height:400px;box-shadow: 3px 8px 12px rgba(0, 0, 0, .5);margin-top:50px;">
+<canvas id="myCanvas" width="200" height="400" style="border:1px solid black;background-color:white;">
 Your browser does not support the HTML5 canvas tag.
 </canvas>
+ </div>
+
 
 <script>
 
