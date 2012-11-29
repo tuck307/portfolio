@@ -45,22 +45,22 @@
          <p style="margin-top:40px; padding-top:20px; font-size:30px;">Game Players</p>
          <div style="height:80px;border: 1px solid black;margin:1px;">
              <div style="float:left;height:100%;background-color:red;width:20%;line-height: 4;">1st</div>
-             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player jon</div>
+             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player</div>
          </div>
          
          <div style="height:80px;border: 1px solid black;margin:1px;">
              <div style="float:left;height:100%;background-color:red;width:20%;line-height: 4;">2nd</div>
-             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player jon</div>
+             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player</div>
          </div>
          
          <div style="height:80px;border: 1px solid black;margin:1px;">
              <div style="float:left;height:100%;background-color:red;width:20%;line-height: 4;">3rd</div>
-             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player jon</div>
+             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player</div>
          </div>
          
          <div style="height:80px;border: 1px solid black;margin:1px;">
              <div style="float:left;height:100%;background-color:red;width:20%;line-height: 4;">4th</div>
-             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player jon</div>
+             <div style="float:right;height:100%;background-color:green;width:80%;line-height: 4;">player</div>
          </div>
          
      </div>
@@ -68,11 +68,30 @@
  </div>
 <div style="width:300px;height:500px;float:right;position:relative;right:50px;">
     
-     <div style="height:210px;text-align:center;background-color:gray;">
-         <p style="margin-top:40px;padding-top:20px; ">next piece</p>
+     <div style="height:210px;text-align:center;background-color:black;">
+         <p style="margin-top:40px;padding-top:20px;color:white; ">next piece</p>
+         <canvas id="myNextCanvas" width="80" height="100" style="border:1px solid black;background-color:black;">
+        Your browser does not support the HTML5 canvas tag.
+        </canvas>
      </div>
-     <div style="text-align:center;height:210px;background-color:gray;">
-         <p style="margin-top:40px;padding-top:20px; ">score board</p>
+     <div style="text-align:center;height:270px;background-color:gray;">
+         <p style="margin-top:20px;padding-top:10px;font-size:26px; ">score board</p>
+         <ul style="width:100%;height:100%;">
+             <li style="width:99%;margin:auto;border:1px solid;height:20%;margin-top:2px;">
+                 <div style="display:inline-block;width:48%;line-height:3;">Score</div>
+                 <div id="myScore" style="display:inline-block;width:48%;line-height:3;">00000</div>
+             </li>
+             <li style="width:99%;margin:auto;border:1px solid;height:20%;margin-top:2px;">
+                 <div style="display:inline-block;width:48%;line-height:3;">Lines</div>
+                 <div id="myLines" style="display:inline-block;width:48%;line-height:3;">00</div>
+             </li>
+             <li style="width:99%;margin:auto;border:1px solid;height:20%;margin-top:2px;">
+                 <div style="display:inline-block;width:48%;line-height:3;">Level</div>
+                 <div id="myLevel" style="display:inline-block;width:48%;line-height:3;">00</div>
+             </li>
+         </ul>
+             
+         
      </div>
  
  </div>
@@ -90,7 +109,11 @@ Your browser does not support the HTML5 canvas tag.
 
 
 function Board (){
+    this.my_timer = 0;
     this.next_piece_flag = 0;
+    this.my_current_level = 0;
+    this.my_current_lines = 0;
+    this.my_current_score = 0;
     this.my_width = 10;
     this.my_height = 24;
     this.my_last_lines_removed = 0;
@@ -104,10 +127,20 @@ function Board (){
                          new Array(10),new Array(10),new Array(10),new Array(10),new Array(10),
                          new Array(10),new Array(10),new Array(10),new Array(10),new Array(10),
                          new Array(10),new Array(10),new Array(10),new Array(10)];
-
-    
+this.myNextCanvas(); 
+this.setTime(1000);
 };
 
+Board.prototype.setTime = function(the_amount){
+    var self = this;
+ // this.my_timer = setInterval(function(){self.moveDown();},the_amount);
+};
+
+//
+//function myStopFunction()
+//{
+//clearTimeout(myVar);
+//}
 
 //gets the boards height
 Board.prototype.getAnother = function(){
@@ -348,8 +381,10 @@ Board.prototype.moveDown = function(){
 
       // replace the current piece with the next piece, and adjust
       // my_last_blocks_placed
-      this.my_current_piece = this.getAnother();
+      this.my_current_piece = this.my_next_piece;
+      this.my_next_piece = this.getAnother();
       this.my_current_piece.my_origin  = new Point(5,20);
+      this.myNextCanvas(); 
      // this.my_next_piece = this.my_piece_generator.next();
       this.my_last_blocks_placed = 4;
     } 
@@ -359,6 +394,7 @@ Board.prototype.moveDown = function(){
       this.my_current_piece = moved;
       this.my_last_blocks_placed = 0;
     }
+    this.toString();
     this.my_changed_flag = true;
   }
 
@@ -417,6 +453,7 @@ Board.prototype.isWithinBoard = function(the_point){
 Board.prototype.clearFullRows = function(){
     
     var found = false;
+    var removed = 0;
     for(var i = this.my_row_list.length-1; i >= 0; i--){
            
             if (this.isFrozenRowFull(i)){
@@ -428,6 +465,13 @@ Board.prototype.clearFullRows = function(){
                 });
                 this.my_row_list[23] = new Array(10);
                 found = true;
+                this.my_current_lines++;
+                removed++;
+                $('#myLines').html(this.my_current_lines);
+                if(this.my_current_lines%5 === 0){
+                    this.my_current_level++;
+                    $("#myLevel").html(this.my_current_level);
+                }
             }
             
         }
@@ -435,6 +479,28 @@ Board.prototype.clearFullRows = function(){
         console.log(this.toString());
             this.toString();
         }
+        
+        switch (removed){
+        case 0:
+            
+            break;
+        case 1:
+            this.my_current_score+=10;
+            break;
+        case 2:
+            this.my_current_score+=20;
+            break;
+        case 3:
+            this.my_current_score+=30;
+            break;
+        case 4:
+            this.my_current_score+=40;
+            break;
+        
+        default: return;
+        }
+        
+        $("#myScore").html(this.my_current_score);
 
 };
 
@@ -501,7 +567,6 @@ var result  = "";
 
     }
     
-
     for (var i = 0; i < 4; i++)
     {
         
@@ -511,21 +576,65 @@ var result  = "";
       if (this.getRowAt(y)[x] === undefined)
       {
         
-            ctx.beginPath();
-            ctx.rect(x*20 ,(19-y)*20,20,20);
-            ctx.fillStyle = this.my_current_piece.my_color;
-            ctx.fill();
-            ctx.lineWidth = 1;
-            ctx.strokeStyle = 'black';
-            ctx.stroke();
-
-       
+        ctx.beginPath();
+        ctx.rect(x*20 ,(19-y)*20,20,20);
+        ctx.fillStyle = this.my_current_piece.my_color;
+        ctx.fill();
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'black';
+        ctx.stroke();
       }
 
     }
 
 };
 
+Board.prototype.myNextCanvas = function(){
+
+    var nc =document.getElementById("myNextCanvas");
+    this.clearNextCanvasGrid(nc);
+    var ctn= nc.getContext("2d");  
+var piece = "";
+
+var found = false;
+ for (var y = 3; 0 <= y; y--) 
+    {
+      found = false;
+      for (var x = 3; 0 <= x; x--) 
+      {
+        for (var i = 0; i < 4; i++) 
+        {
+          var temp = this.my_next_piece.absolutePosition(i);
+          var pos = new Point(temp[i].x, temp[i].y);
+          
+          if (pos.x === x && pos.y === y) 
+          {
+            piece+=("[]");
+            ctn.beginPath();
+            ctn.rect(x*20,y*20,20,20);
+            ctn.fillStyle = this.my_next_piece.my_color;
+            ctn.fill();
+            ctn.lineWidth = 1;
+            ctn.strokeStyle = 'black';
+            ctn.stroke();
+            found = true;
+          } 
+        }
+        if (!found)
+        {
+          piece+=("  ");
+        }
+      }
+      piece+=('\n');
+    }
+    return piece;
+  
+//       
+//      }
+
+  //  }
+
+};
 
 Board.prototype.clearCanvasGrid = function(the_canvas){
 
@@ -545,6 +654,23 @@ Board.prototype.clearCanvasGrid = function(the_canvas){
 
 };
 
+Board.prototype.clearNextCanvasGrid = function(the_canvas){
+
+     var canvas = document.getElementById("myNextCanvas"); //because we are looping //each location has its own canvas ID
+            var context = canvas.getContext('2d');
+            //context.beginPath();
+
+            // Store the current transformation matrix
+            context.save();
+
+            // Use the identity matrix while clearing the canvas
+            context.setTransform(1, 0, 0, 1, 0, 0);
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Restore the transform
+            context.restore(); //CLEARS THE SPECIFIC CANVAS COMPLETELY FOR NEW DRAWING
+
+};
 
 
 
@@ -579,6 +705,9 @@ $(document).keydown(function(e){
     }
     e.preventDefault();
 });
+
+
+
 
 </script>
 
