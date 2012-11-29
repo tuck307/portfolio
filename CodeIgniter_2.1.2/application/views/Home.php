@@ -12,7 +12,7 @@
 
                     <div id="frontPicContainer">
                         <div id="pic_frame_wrapper" class="box-shadow transparent">
-                            <div id="pic_frame_resume" style="width: 258px;height: 273px;box-shadow: 0px 0px 2px black;background: #F6F6F6 url(images/sketch.jpg) 50% 200% no-repeat">
+                            <div id="pic_frame_resume" style="width: 258px;height: 273px;box-shadow: 0px 0px 2px black;background: #F6F6F6 url(images/ketch.jpg) 50% 200% no-repeat">
                             </div><!-- end pic_frame -->
                         </div>
                     </div>

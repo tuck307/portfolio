@@ -66,11 +66,15 @@
      </div>
 
  </div>
+
 <div style="width:300px;height:500px;float:right;position:relative;right:50px;">
     
+    <input id="pauseBtn" type="button" value="Pause" />
+    <input id="startBtn" type="button" value="start" />
+    <input id="restartBtn" type="button" value="restart" style="margin:10px;"/>
      <div style="height:210px;text-align:center;background-color:black;">
          <p style="margin-top:40px;padding-top:20px;color:white; ">next piece</p>
-         <canvas id="myNextCanvas" width="80" height="100" style="border:1px solid black;background-color:black;">
+         <canvas id="myNextCanvas" width="80" height="80" style="border:1px solid black;margin-top:-10px;background-color:black;width:100px;">
         Your browser does not support the HTML5 canvas tag.
         </canvas>
      </div>
@@ -120,27 +124,28 @@ function Board (){
     this.my_last_blocks_placed = 0;
     this.my_changed_flag = true;
     this.my_full_flag = false;
-    this.my_next_piece = new OPiece();
+    this.my_next_piece = new TPiece();
     this.my_current_piece = new JPiece();
     this.my_row_list = [ new Array(10),new Array(10),new Array(10),new Array(10),new Array(10),
                          new Array(10),new Array(10),new Array(10),new Array(10),new Array(10),
                          new Array(10),new Array(10),new Array(10),new Array(10),new Array(10),
                          new Array(10),new Array(10),new Array(10),new Array(10),new Array(10),
                          new Array(10),new Array(10),new Array(10),new Array(10)];
-this.myNextCanvas(); 
-this.setTime(1000);
+    this.my_nextPiece_list = [new Array(10),new Array(10),new Array(10),new Array(10)];
+    this.myNextCanvas(); 
+    this.setTime(1000);
 };
 
 Board.prototype.setTime = function(the_amount){
     var self = this;
- // this.my_timer = setInterval(function(){self.moveDown();},the_amount);
+    this.my_timer = setInterval(function(){self.moveDown();},the_amount);
 };
 
-//
-//function myStopFunction()
-//{
-//clearTimeout(myVar);
-//}
+
+Board.prototype.clearTimer = function(){
+    clearInterval(this.my_timer);
+};
+
 
 //gets the boards height
 Board.prototype.getAnother = function(){
@@ -199,6 +204,7 @@ Board.prototype.getRowAt = function(the_y){
    var result = this.my_row_list[the_y].slice();
    return result;
 };
+
 
 //checks to see if row is empty
 Board.prototype.isRowEmpty = function(the_y){
@@ -589,52 +595,86 @@ var result  = "";
 
 };
 
+//Board.prototype.myNextCanvas = function(){
+//
+//    var nc =document.getElementById("myNextCanvas");
+//    this.clearNextCanvasGrid(nc);
+//    var ctn= nc.getContext("2d");  
+//var piece = "";
+//
+//var found = false;
+// for (var y = 3; 0 <= y; y--) 
+//    {
+//      found = false;
+//      for (var x = 3; 0 <= x; x--) 
+//      {
+//        for (var i = 0; i < 4; i++) 
+//        {
+//          var temp = this.my_next_piece.absolutePosition(i);
+//          var pos = new Point(temp.x, temp.y);
+//          
+//          if (pos.x === x && pos.y === y) 
+//          {
+//            piece+=("[]");
+//            ctn.beginPath();
+//            ctn.rect(x*20,y*20,20,20);
+//            ctn.fillStyle = this.my_next_piece.my_color;
+//            ctn.fill();
+//            ctn.lineWidth = 1;
+//            ctn.strokeStyle = 'black';
+//            ctn.stroke();
+//            found = true;
+//          } 
+//        }
+//        if (!found)
+//        {
+//          piece+=("  ");
+//        }
+//      }
+//      piece+=('\n');
+//    }
+//    return piece;
+// 
+//};
+//returns a specific row from the board
+Board.prototype.getNextRowAt = function(the_y){
+console.log(the_y + "**************");
+   var result = this.my_nextPiece_list[the_y].slice();
+   console.log(result);
+   return result;
+};
+
 Board.prototype.myNextCanvas = function(){
 
-    var nc =document.getElementById("myNextCanvas");
-    this.clearNextCanvasGrid(nc);
-    var ctn= nc.getContext("2d");  
-var piece = "";
-
-var found = false;
- for (var y = 3; 0 <= y; y--) 
+    var ctx =document.getElementById("myNextCanvas");
+    this.clearNextCanvasGrid(ctx);
+    var ctx= ctx.getContext("2d");
+    
+    for (var i = 0; i < 4; i++)
     {
-      found = false;
-      for (var x = 3; 0 <= x; x--) 
+//        
+//      var x = this.my_current_piece.absolutePosition(i).x;
+//      var y = this.my_current_piece.absolutePosition(i).y;
+      
+      var x = this.my_next_piece.absolutePosition(i).x;
+      var y = this.my_next_piece.absolutePosition(i).y;
+
+      if (this.getNextRowAt(y)[x] === undefined)
       {
-        for (var i = 0; i < 4; i++) 
-        {
-          var temp = this.my_next_piece.absolutePosition(i);
-          var pos = new Point(temp[i].x, temp[i].y);
-          
-          if (pos.x === x && pos.y === y) 
-          {
-            piece+=("[]");
-            ctn.beginPath();
-            ctn.rect(x*20,y*20,20,20);
-            ctn.fillStyle = this.my_next_piece.my_color;
-            ctn.fill();
-            ctn.lineWidth = 1;
-            ctn.strokeStyle = 'black';
-            ctn.stroke();
-            found = true;
-          } 
-        }
-        if (!found)
-        {
-          piece+=("  ");
-        }
+        
+        ctx.beginPath();
+        ctx.rect(x*20 ,(3-y)*20,20,20);
+        ctx.fillStyle = this.my_next_piece.my_color;
+        ctx.fill();
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'black';
+        ctx.stroke();
       }
-      piece+=('\n');
+
     }
-    return piece;
-  
-//       
-//      }
-
-  //  }
-
+ 
 };
+
 
 Board.prototype.clearCanvasGrid = function(the_canvas){
 
@@ -675,6 +715,27 @@ Board.prototype.clearNextCanvasGrid = function(the_canvas){
 
 
 var board = new Board();
+$("#startBtn").hide();
+$("#pauseBtn").click(function(){
+   board.clearTimer();
+   $("#startBtn").show();
+   $("#pauseBtn").hide();
+   
+});
+$("#startBtn").click(function(){
+   board.setTime(1000);
+   $("#pauseBtn").show();
+    $("#startBtn").hide();
+
+});
+$("#restartBtn").click(function(){
+delete board;
+board = { };
+ var b = new Board();
+b.my_current_piece.my_origin = new Point(5,20);
+b.my_next_piece.my_origin = new Point(5,20);
+
+});
 board.my_current_piece.my_origin = new Point(5,20);
 board.my_next_piece.my_origin = new Point(5,20);
 
